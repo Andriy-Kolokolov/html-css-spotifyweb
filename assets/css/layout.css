@@ -1,1 +1,42 @@
+:root {
+    --top-bar-height: 75px;
+    --sidebar-container-width: 250px;
+}
 
+.sidebar {
+    width: var(--sidebar-container-width);
+    height: 100vh;
+}
+
+.logo {
+    height: var(--top-bar-height);
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    padding-left: 1rem;
+    cursor: pointer;
+    max-width: 70%;
+}
+
+.nav .links li img {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+}
+
+.nav.playlists .create-playlist {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    padding: 5px;
+}
+
+.nav ul a {
+    display: flex;
+    align-items: center;
+}
+
+.download-app img {
+    width: 20px;
+    aspect-ratio: 1 / 1;
+}

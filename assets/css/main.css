@@ -3,3 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: lightgray;
+}
+
+.sidebar {
+    background-color: #000000;
+}
+
+.nav.playlists .create-playlist {
+    background-color: #a3a3a3;
+}
