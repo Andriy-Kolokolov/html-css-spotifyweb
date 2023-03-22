@@ -6,13 +6,39 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: lightgray;
+    font-weight: 500;
+    background-color: lightgray; /*    todo -> remove when ff layout    */
+}
+
+.links {
+    list-style: none;
 }
 
 .sidebar {
     background-color: #000000;
 }
 
+.sidebar a {
+    color: #717171;
+    text-decoration: none;
+}
+
+.nav.playlists a {
+    font-size: 14px;
+}
+
+.sidebar-top h4 {
+    color: #d7d7d7;
+}
+
 .nav.playlists .create-playlist {
     background-color: #a3a3a3;
+}
+
+.nav.profiles {
+    border-top: 1px solid #808080;
+}
+
+.audio-player-panel {
+    background-color: #282828;
 }

@@ -1,28 +1,44 @@
 :root {
     --top-bar-height: 75px;
     --sidebar-container-width: 250px;
+    --sidebar-padding: 1.5rem;
 }
 
 .sidebar {
+    position: relative;
     width: var(--sidebar-container-width);
-    height: 100vh;
+    height: 90vh;
+    padding: var(--sidebar-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-top > *:nth-child(n+2),
+.sidebar-bot .download-app {
+    margin-bottom: 1rem;
 }
 
 .logo {
     height: var(--top-bar-height);
-    display: flex;
-    align-items: center;
 }
 
 .logo img {
-    padding-left: 1rem;
     cursor: pointer;
-    max-width: 70%;
+    max-width: 80%;
 }
 
 .nav .links li img {
-    width: 40px;
+    width: 30px;
     aspect-ratio: 1 / 1;
+}
+
+.nav.main .links li {
+    padding: 4px 0;
+}
+
+.nav.playlists .links li {
+    padding: .5rem 0;
 }
 
 .nav.playlists .create-playlist {
@@ -31,12 +47,34 @@
     padding: 5px;
 }
 
-.nav ul a {
+.nav .links a {
     display: flex;
     align-items: center;
 }
 
-.download-app img {
+.nav .links span {
+    margin-left: .5rem;
+}
+
+.nav.download-app img {
     width: 20px;
     aspect-ratio: 1 / 1;
 }
+
+.nav.profiles {
+    padding-top: 1rem;
+}
+
+.nav .profile-img-container {
+    border-radius: 50%;
+    width: 30px;
+    aspect-ratio: 1 / 1;
+    background-color: #808080;
+    content: url("../img/profile.svg");
+}
+
+.audio-player-panel {
+    height: 10vh;
+}
+
+
