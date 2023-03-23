@@ -6,7 +6,6 @@
 }
 
 .sidebar {
-    position: relative;
     width: var(--sidebar-container-width);
     height: calc(100vh - var(--player-panel-height));
     padding: var(--sidebar-padding);
@@ -76,7 +75,7 @@
     content: url("../img/profile.svg");
 }
 
-.top-bar {
+.top-panel {
     position: fixed;
     top: 0;
     left: var(--sidebar-container-width);
@@ -85,11 +84,12 @@
 }
 
 main.content {
-    position: relative;
+    position: absolute;
     top: var(--top-panel-height);
+    left: var(--sidebar-container-width);
     width: calc(100vw - var(--sidebar-container-width));
     height: calc(100vh - var(--player-panel-height) - var(--top-panel-height));
-    background-color: grey;
+    background-color: #a3a3a3;
 }
 
 .audio-player-panel {
