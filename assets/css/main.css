@@ -19,7 +19,7 @@ body {
 }
 
 .sidebar a {
-    color: #717171;
+    color: #8d8d8d;
     text-decoration: none;
 }
 
@@ -37,6 +37,10 @@ body {
 
 .nav.profiles {
     border-top: 1px solid #808080;
+}
+
+.top-bar {
+    background-color: #080b12;
 }
 
 .audio-player-panel {

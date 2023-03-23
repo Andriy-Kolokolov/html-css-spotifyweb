@@ -1,17 +1,19 @@
 :root {
-    --top-bar-height: 75px;
+    --top-panel-height: 75px;
     --sidebar-container-width: 250px;
     --sidebar-padding: 1.5rem;
+    --player-panel-height: 100px;
 }
 
 .sidebar {
     position: relative;
     width: var(--sidebar-container-width);
-    height: 90vh;
+    height: calc(100vh - var(--player-panel-height));
     padding: var(--sidebar-padding);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: auto;
 }
 
 .sidebar-top > *:nth-child(n+2),
@@ -20,7 +22,7 @@
 }
 
 .logo {
-    height: var(--top-bar-height);
+    height: var(--top-panel-height);
 }
 
 .logo img {
@@ -30,6 +32,7 @@
 
 .nav .links li img {
     width: 30px;
+    filter: brightness(60%);
     aspect-ratio: 1 / 1;
 }
 
@@ -73,8 +76,29 @@
     content: url("../img/profile.svg");
 }
 
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-container-width);
+    height: var(--top-panel-height);
+    width: calc(100vw - var(--sidebar-container-width));
+}
+
+main.content {
+    position: relative;
+    top: var(--top-panel-height);
+    width: calc(100vw - var(--sidebar-container-width));
+    height: calc(100vh - var(--player-panel-height) - var(--top-panel-height));
+    background-color: grey;
+}
+
 .audio-player-panel {
-    height: 10vh;
+    z-index: 99;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: var(--player-panel-height);
+    width: 100vw;
 }
 
 
