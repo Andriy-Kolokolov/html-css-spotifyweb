@@ -1,3 +1,8 @@
-.sidebar .nav .links li a:hover {
-    filter: brightness(80);
+.sidebar .nav .links li a:hover,
+.main-content .navigation .links li a:hover {
+    filter: brightness(250%);
+}
+
+.top-panel .upgrade:hover {
+    scale: 105%;
 }

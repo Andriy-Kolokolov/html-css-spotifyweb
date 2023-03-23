@@ -1,3 +1,8 @@
+:root {
+    --color-links: #787b7f;
+    --transition-links-time: .3s;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,40 +12,64 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    background-color: lightgray; /*    todo -> remove when ff layout    */
 }
 
-.links {
+ul {
     list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .sidebar {
     background-color: #000000;
 }
 
-.sidebar a {
-    color: #8d8d8d;
-    text-decoration: none;
+.sidebar-navigation .links a,
+.sidebar-bot .download-app a {
+    color: var(--color-links);
+    transition: var(--transition-links-time);
 }
 
-.nav.playlists a {
-    font-size: 14px;
-}
-
-.sidebar-top h4 {
+.sidebar-navigation h4 {
     color: #d7d7d7;
 }
 
 .nav.playlists .create-playlist {
-    background-color: #a3a3a3;
+    background-color: var(--color-links);
+}
+
+.nav.playlists .links a {
+    font-size: 14px;
 }
 
 .nav.profiles {
     border-top: 1px solid #808080;
 }
 
+.nav.profiles .links a {
+    color: white;
+    transition: var(--transition-links-time);
+}
+
 .top-panel {
     background-color: #080b12;
+    color: white ;
+}
+
+.upgrade {
+    transition: var(--transition-links-time);
+}
+
+.main-content {
+    background-color: #141922;
+}
+
+.main-content .navigation .links a {
+    text-decoration: none;
+    color: var(--color-links);
+    transition: var(--transition-links-time);
 }
 
 .audio-player-panel {

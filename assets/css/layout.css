@@ -3,6 +3,14 @@
     --sidebar-container-width: 250px;
     --sidebar-padding: 1.5rem;
     --player-panel-height: 100px;
+    --main-nav-height: 3rem;
+}
+
+.btn {
+    cursor: pointer;
+    padding: .5rem  2rem;
+    border: 1px solid;
+    border-radius: 2rem;
 }
 
 .sidebar {
@@ -15,7 +23,7 @@
     overflow: auto;
 }
 
-.sidebar-top > *:nth-child(n+2),
+.sidebar-navigation > *:nth-child(n+2),
 .sidebar-bot .download-app {
     margin-bottom: 1rem;
 }
@@ -83,13 +91,30 @@
     width: calc(100vw - var(--sidebar-container-width));
 }
 
-main.content {
+.top-panel .btn.upgrade {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: inline-block;
+}
+
+.main-content {
     position: absolute;
     top: var(--top-panel-height);
     left: var(--sidebar-container-width);
     width: calc(100vw - var(--sidebar-container-width));
     height: calc(100vh - var(--player-panel-height) - var(--top-panel-height));
-    background-color: #a3a3a3;
+}
+
+.main-content .navigation .links {
+    height: var(--main-nav-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    white-space: nowrap;
 }
 
 .audio-player-panel {
