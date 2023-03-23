@@ -124,11 +124,13 @@
 
 .main-container .content .section-title {
     margin-bottom: 1.5rem;
+    line-height: 2.5rem;
 }
 
 .main-container .section {
     --cols: 6;
 
+    margin-bottom: 1.5rem;
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap-playlists);
@@ -173,30 +175,52 @@
     background-size: cover;
 }
 
-.main-container .item-playlist:first-child .img-container {
+.main-container .popular .img-container {
+    border-radius: 50%;
+}
+
+/*  img RECENT SECTION  */
+.main-container .recent .item-playlist:first-child .img-container {
     background-image: url("../img/metal_lifting.jpg");
 }
 
-.main-container .item-playlist:nth-child(2) .img-container {
+.main-container .recent .item-playlist:nth-child(2) .img-container {
     background-image: url("../img/stranger.jpeg");
 }
 
-.main-container .item-playlist:nth-child(3) .img-container {
+.main-container .recent .item-playlist:nth-child(3) .img-container {
     background-image: url("../img/aquietplace.jpeg");
 }
 
-.main-container .item-playlist:nth-child(4) .img-container {
+.main-container .recent .item-playlist:nth-child(4) .img-container {
     background-image: url("../img/split.jpeg");
 }
 
-.main-container .item-playlist:nth-child(5) .img-container {
+.main-container .recent .item-playlist:nth-child(5) .img-container {
     background-image: url("../img/cure.jpeg");
 }
 
-.main-container .item-playlist:nth-child(6) .img-container {
+.main-container .recent .item-playlist:nth-child(6) .img-container {
     background-image: url("../img/sinister.jpeg");
 }
 
+/*  img CREATO PER TE SECTION  */
+.main-container .creato-per-te .item-playlist:first-child .img-container {
+    background-image: url("../img/radar.jpeg");
+}
+
+.main-container .creato-per-te .item-playlist:nth-child(2) .img-container {
+    background-image: url("../img/mixdaily.jpeg");
+}
+
+/*  img POPULAR  */
+.main-container .popular .item-playlist:first-child .img-container {
+    background-image: url("../img/youg.jpeg");
+}
+
+.main-container .popular .item-playlist:nth-child(2) .img-container {
+    background-image: url("../img/einaudi.jpeg");
+}
 
 .audio-player-panel {
     z-index: 99;
