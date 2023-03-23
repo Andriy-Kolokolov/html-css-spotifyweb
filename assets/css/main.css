@@ -1,6 +1,8 @@
 :root {
-    --color-links: #787b7f;
-    --transition-links-time: .3s;
+    --color-links: #9a9a9a;
+    --color-title: white;
+    --color-subtitle: #7c7e83;
+    --transition-links-time: .4s;
 }
 
 * {
@@ -33,7 +35,7 @@ a {
 }
 
 .sidebar-navigation h4 {
-    color: #d7d7d7;
+    color: var(--color-title);
 }
 
 .nav.playlists .create-playlist {
@@ -62,11 +64,20 @@ a {
     transition: var(--transition-links-time);
 }
 
-.main-content {
+.main-container {
     background-color: #141922;
 }
 
-.main-content .navigation .links a {
+.main-container .title,
+.main-container .section-title {
+    color: var(--color-title);
+}
+
+.main-container .subtitle {
+    color: var(--color-subtitle);
+}
+
+.main-container .navigation .links a {
     text-decoration: none;
     color: var(--color-links);
     transition: var(--transition-links-time);

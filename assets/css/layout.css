@@ -3,12 +3,12 @@
     --sidebar-container-width: 250px;
     --sidebar-padding: 1.5rem;
     --player-panel-height: 100px;
-    --main-nav-height: 3rem;
+    --gap-playlists: 1.5rem;
 }
 
 .btn {
     cursor: pointer;
-    padding: .5rem  2rem;
+    padding: .5rem 2rem;
     border: 1px solid;
     border-radius: 2rem;
 }
@@ -99,16 +99,17 @@
     display: inline-block;
 }
 
-.main-content {
+.main-container {
     position: absolute;
     top: var(--top-panel-height);
     left: var(--sidebar-container-width);
     width: calc(100vw - var(--sidebar-container-width));
     height: calc(100vh - var(--player-panel-height) - var(--top-panel-height));
+    overflow: auto;
 }
 
-.main-content .navigation .links {
-    height: var(--main-nav-height);
+.main-container .navigation .links {
+    padding: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,6 +117,86 @@
     gap: 1.5rem;
     white-space: nowrap;
 }
+
+.main-container .content {
+    padding: 1rem;
+}
+
+.main-container .content .section-title {
+    margin-bottom: 1.5rem;
+}
+
+.main-container .section {
+    --cols: 6;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-playlists);
+}
+
+.main-container .item-playlist {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-align: center;
+    flex: 0 0 calc((100% - var(--cols) * var(--gap-playlists)) / var(--cols));
+}
+
+@media (max-width: 699px) {
+    .main-container .section {
+        --cols: 2;
+
+        font-size: 75%;
+    }
+}
+
+@media (min-width: 700px) {
+    .main-container .section {
+        --cols: 4;
+
+        font-size: 85%;
+        white-space: nowrap;
+    }
+}
+
+
+@media (min-width: 1100px) {
+    .main-container .section {
+        --cols: 6;
+    }
+}
+
+
+.main-container .item-playlist .img-container {
+    max-height: 200px;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+}
+
+.main-container .item-playlist:first-child .img-container {
+    background-image: url("../img/metal_lifting.jpg");
+}
+
+.main-container .item-playlist:nth-child(2) .img-container {
+    background-image: url("../img/stranger.jpeg");
+}
+
+.main-container .item-playlist:nth-child(3) .img-container {
+    background-image: url("../img/aquietplace.jpeg");
+}
+
+.main-container .item-playlist:nth-child(4) .img-container {
+    background-image: url("../img/split.jpeg");
+}
+
+.main-container .item-playlist:nth-child(5) .img-container {
+    background-image: url("../img/cure.jpeg");
+}
+
+.main-container .item-playlist:nth-child(6) .img-container {
+    background-image: url("../img/sinister.jpeg");
+}
+
 
 .audio-player-panel {
     z-index: 99;
