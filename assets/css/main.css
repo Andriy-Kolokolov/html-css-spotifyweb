@@ -108,6 +108,17 @@ a {
     font-size: 1.5rem;
 }
 
-.player-middle-side .song-time {
+.player-middle-side .song-time-control {
     font-size: .8rem;
+}
+
+.audio-player-panel .fa-solid,
+.audio-player-panel .fa-regular {
+    transition: var(--transition-links-time);
+}
+
+.player-middle-side .controls i,
+.player-left-side i,
+.player-right-side {
+    cursor: pointer;
 }

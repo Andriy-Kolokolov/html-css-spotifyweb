@@ -6,6 +6,10 @@
     --gap-playlists: 1.5rem;
 }
 
+body {
+    overflow: hidden;
+}
+
 .btn {
     cursor: pointer;
     padding: .5rem 2rem;
@@ -168,9 +172,8 @@
     }
 }
 
-
 .main-container .item-playlist .img-container {
-    max-height: 200px;
+    max-height: 250px;
     aspect-ratio: 1 / 1;
     background-size: cover;
 }
@@ -227,32 +230,29 @@
     justify-content: space-between;
     display: flex;
     z-index: 99;
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     height: var(--player-panel-height);
     width: 100vw;
 }
 
-.audio-player-panel >  * {
-    flex: 0 0 calc(100% / 3);
-}
-
 .player-left-side {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex: 0 1 20%;
 }
 
-.player-left-side > i:nth-child(3){
-    margin-left: 3rem;
-}
-
- .player-left-side img {
+.player-left-side img {
     max-height: 50%;
 }
 
 .player-middle-side {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,12 +262,40 @@
 
 .player-middle-side .controls {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
-.player-middle-side .song-time {
+.player-middle-side .song-time-control {
     display: flex;
-    gap: 1.5rem;
+    gap: .5rem;
+}
+
+.song-time-control .slider {
+    width: 200px;
+    height: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .4s;
+}
+
+.song-time-control .slider::-moz-range-thumb {
+    width: 5px;
+    height: 5px;
+    background: #282828;
+    border-radius: 0;
+    border-width: 0;
+}
+
+.song-time-control .slider {
+    cursor: pointer;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.song-time-control .song-time {
+    width: 25px;
 }
 
 .player-right-side {
@@ -277,4 +305,31 @@
     gap: 1rem;
 }
 
+.volume-slider {
+    cursor: pointer;
+    opacity: 0.7;
+    width: 80px;
+    height: 5px;
+    outline: none;
+    transition: opacity .4s;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 5px;
+    height: 5px;
+    background: #282828;
+    border-radius: 0;
+    border-width: 0;
+}
+
+@media (max-width: 699px) {
+
+    .player-middle-side .controls {
+        gap: 1rem;
+    }
+
+    .song-time-control .slider {
+        width: 100px;
+    }
+}
 

@@ -7,3 +7,35 @@
 .top-panel .upgrade:hover {
     scale: 105%;
 }
+
+.audio-player-panel .fa-solid:hover,
+.audio-player-panel .fa-regular:hover {
+    color: white;
+}
+
+.player-middle-side .song-time-control .slider::-moz-range-thumb:active,
+.player-middle-side .song-time-control .slider:hover::-moz-range-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb:active,
+.volume-slider:hover::-moz-range-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.player-middle-side .controls .fa-circle-play:hover {
+    cursor: pointer;
+    scale: 1.5;
+}
