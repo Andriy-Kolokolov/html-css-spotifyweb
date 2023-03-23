@@ -223,12 +223,58 @@
 }
 
 .audio-player-panel {
+    padding-inline: var(--sidebar-padding);
+    justify-content: space-between;
+    display: flex;
     z-index: 99;
     position: fixed;
     left: 0;
     bottom: 0;
     height: var(--player-panel-height);
     width: 100vw;
+}
+
+.audio-player-panel >  * {
+    flex: 0 0 33%;
+}
+
+.player-left-side {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.player-left-side > i:nth-child(3){
+    margin-left: 3rem;
+}
+
+ .player-left-side img {
+    max-height: 50%;
+}
+
+.player-middle-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.player-middle-side .controls {
+    display: flex;
+    gap: 2rem;
+}
+
+.player-middle-side .song-time {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.player-right-side {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 1rem;
 }
 
 

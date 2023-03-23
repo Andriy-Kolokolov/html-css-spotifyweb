@@ -1,7 +1,7 @@
 :root {
-    --color-links: #9a9a9a;
+    --color-links: #a9a9a9;
     --color-title: white;
-    --color-subtitle: #7c7e83;
+    --color-subtitle: #989898;
     --transition-links-time: .4s;
 }
 
@@ -57,7 +57,7 @@ a {
 
 .top-panel {
     background-color: #080b12;
-    color: white ;
+    color: white;
 }
 
 .upgrade {
@@ -85,4 +85,29 @@ a {
 
 .audio-player-panel {
     background-color: #282828;
+}
+
+.player-left-side .song_artist {
+    color: var(--color-title);
+}
+
+.player-left-side .song_name {
+    color: var(--color-subtitle);
+}
+
+.player-left-side i {
+    color: var(--color-subtitle);
+}
+
+.player-middle-side,
+.player-right-side {
+    color: white;
+}
+
+.player-middle-side .controls {
+    font-size: 1.5rem;
+}
+
+.player-middle-side .song-time {
+    font-size: .8rem;
 }
