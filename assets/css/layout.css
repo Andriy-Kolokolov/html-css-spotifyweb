@@ -101,6 +101,7 @@ body {
 
 .top-panel {
     position: fixed;
+    z-index: 98;
     top: 0;
     left: var(--sidebar-container-width);
     height: var(--top-panel-height);
@@ -117,10 +118,11 @@ body {
 
 .main-container {
     position: absolute;
-    top: var(--top-panel-height);
+    top: 0;
     left: var(--sidebar-container-width);
     width: calc(100vw - var(--sidebar-container-width));
-    height: calc(100vh - var(--player-panel-height) - var(--top-panel-height));
+    height: calc(100vh - var(--player-panel-height));
+    padding-top: var(--top-panel-height);
     overflow: auto;
 }
 
@@ -189,6 +191,13 @@ body {
         display: none;
     }
 
+    .nav.main .links {
+        margin-top: .5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
     .nav.main .links li a {
         justify-content: center;
     }
@@ -236,6 +245,17 @@ body {
     max-height: 250px;
     aspect-ratio: 1 / 1;
     background-size: cover;
+}
+
+.main-container .item-playlist .img-container:before {
+    content: url("../img/circle-play-regular.svg");
+    opacity: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-container .popular .item-playlist .img-container:before {
+    border-radius: 50%;
 }
 
 .main-container .popular .img-container {
@@ -301,23 +321,26 @@ body {
     display: flex;
     align-items: center;
     gap: .5rem;
-    flex: 0 1 20%;
+    flex-basis: 20%;
 }
 
-.player-left-side img {
-    max-height: 50%;
+.player-left-side .album-art-img-container {
+    content: url("../img/sinister.jpeg");
+    object-fit: cover;
+    max-height: 50px;
+}
+
+.player-left-side .like-add-to-album > * {
+    padding: 5px;
 }
 
 .player-middle-side {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    flex-basis: 60%;
 }
 
 .player-middle-side .controls {
@@ -333,9 +356,9 @@ body {
 .song-time-control .slider {
     width: 200px;
     height: 5px;
-    outline: none;
-    opacity: 0.7;
+    opacity: 0.6;
     transition: opacity .4s;
+    cursor: pointer;
 }
 
 .song-time-control .slider::-moz-range-thumb {
@@ -346,16 +369,20 @@ body {
     border-width: 0;
 }
 
-.song-time-control .slider {
-    cursor: pointer;
-}
-
-.slider:hover {
-    opacity: 1;
-}
 
 .song-time-control .song-time {
     width: 25px;
+}
+
+@media (max-width: 699px) {
+
+    .player-middle-side .controls {
+        gap: 1rem;
+    }
+
+    .song-time-control .slider {
+        width: 180px;
+    }
 }
 
 .player-right-side {
@@ -363,6 +390,7 @@ body {
     align-items: center;
     justify-content: end;
     gap: 1rem;
+    flex-basis: 20%;
 }
 
 .volume-slider {
@@ -380,16 +408,5 @@ body {
     background: #282828;
     border-radius: 0;
     border-width: 0;
-}
-
-@media (max-width: 699px) {
-
-    .player-middle-side .controls {
-        gap: 1rem;
-    }
-
-    .song-time-control .slider {
-        width: 100px;
-    }
 }
 

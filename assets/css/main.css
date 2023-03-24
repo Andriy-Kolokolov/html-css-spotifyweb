@@ -56,7 +56,7 @@ a {
 }
 
 .top-panel {
-    background-color: #080b12;
+    background-color: rgba(8, 11, 18, 0.75);
     color: white;
 }
 
@@ -93,6 +93,7 @@ a {
 
 .player-left-side .song_name {
     color: var(--color-subtitle);
+    white-space: nowrap;
 }
 
 .player-left-side i {

@@ -1,14 +1,14 @@
-const slider = document.getElementById("song-time-slider");
+const songTimeSlider = document.getElementById("song-time-slider");
 const volumeSlider = document.getElementById("volume-slider");
 
 const output = document.getElementById("song-time");
 const songDuration = 275;
 
-output.innerHTML = secondsToTimeFormat(slider.value);
+output.innerHTML = secondsToTimeFormat(songTimeSlider.value);
 
-slider.max = songDuration;
+songTimeSlider.max = songDuration;
 
-slider.oninput = function() {
+songTimeSlider.oninput = function() {
     output.innerHTML = secondsToTimeFormat(this.value);
 
     const value = (this.value - this.min) / (this.max - this.min) * 100;
