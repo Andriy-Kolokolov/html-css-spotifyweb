@@ -247,6 +247,16 @@ body {
 /*****************************************
     TOP PANEL, MAIN CONTAINER MEDIA QUERY
 *****************************************/
+@media (max-width: 560px) {
+    .main-container {
+        padding-top: 0;
+    }
+
+    .top-panel {
+        display: none;
+    }
+}
+
 @media (max-width: 699px) {
     .top-panel {
         width: calc(100vw - var(--sidebar-width));
@@ -342,7 +352,7 @@ body {
     AUDIO PANEL
 *****************************************/
 .audio-player-panel {
-    padding-inline: var(--sidebar-padding);
+    padding-inline: 2%;
     justify-content: space-between;
     display: flex;
     z-index: 99;
@@ -399,6 +409,21 @@ body {
     cursor: pointer;
 }
 
+.song-time-control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-container {
+    width: 70%
+}
+
+#song-time-slider {
+    width: 100%;
+    margin: 0 auto;
+}
+
 .song-time-control .slider::-moz-range-thumb {
     width: 5px;
     height: 5px;
@@ -449,9 +474,45 @@ body {
 /*****************************************
     AUDIO PANEL MEDIA QUERY
 *****************************************/
+@media (max-width: 560px) {
+    .audio-player-panel {
+        padding-inline: 3%;
+        justify-content: space-between;
+    }
+
+    .player-right-side,
+    .player-left-side {
+        flex-basis: 10%;
+    }
+
+    .player-middle-side {
+        flex-basis: 80%;
+    }
+
+    .player-left-side .like-add-to-album,
+    .player-right-side i:first-child,
+    .player-right-side i:nth-child(2),
+    .volume-slider,
+    .song {
+        display: none;
+    }
+
+    .album-art-img-container {
+        cursor: pointer;
+    }
+}
+
 @media (max-width: 750px) {
     .audio-player-panel {
         --column-gap: .7rem;
+    }
+
+    .player-right-side {
+        padding-left: .5rem;
+    }
+
+    .player-left-side {
+        padding-right: .5rem;
     }
 
     .player-left-side .song {

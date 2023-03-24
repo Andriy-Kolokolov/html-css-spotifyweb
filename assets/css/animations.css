@@ -38,11 +38,6 @@
     scale: 1.5;
 }
 
-.player-middle-side .controls > i:hover {
-    scale: 1.1;
-}
-
-
 .volume-slider::-moz-range-thumb:active,
 .volume-slider:hover::-moz-range-thumb{
     -webkit-appearance: none;
