@@ -32,6 +32,18 @@ body {
     margin-bottom: 1rem;
 }
 
+.sidebar-navigation .nav.main .links li:first-child{
+    position: relative;
+}
+
+.nav.main .half-border-left {
+    border-left: 3px solid green;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--sidebar-padding) * -1);
+}
+
 .logo {
     height: var(--top-panel-height);
 }
@@ -120,6 +132,19 @@ body {
     flex-wrap: wrap;
     gap: 1.5rem;
     white-space: nowrap;
+}
+
+.main-container .navigation .links li:first-child {
+    position: relative;
+}
+
+.main-container .navigation .links li:first-child:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 25%;
+    width: 50%;
+    border-bottom: 3px solid green;
 }
 
 .main-container .content {

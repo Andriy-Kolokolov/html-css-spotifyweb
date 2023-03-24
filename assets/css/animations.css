@@ -39,3 +39,7 @@
     cursor: pointer;
     scale: 1.5;
 }
+
+.main-container .img-container:hover {
+    content: url("../img/circle-play-regular.svg");
+}
