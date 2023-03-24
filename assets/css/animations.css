@@ -7,9 +7,8 @@
     scale: 105%;
 }
 
-.audio-player-panel .fa-solid:hover,
-.audio-player-panel .fa-regular:hover {
-    color: white;
+.audio-player-panel i:hover {
+    opacity: 1;
 }
 
 .player-left-side .song_name:hover,
@@ -34,6 +33,16 @@
     opacity: 1;
 }
 
+.player-middle-side .controls .fa-circle-play:hover {
+    cursor: pointer;
+    scale: 1.5;
+}
+
+.player-middle-side .controls > i:hover {
+    scale: 1.1;
+}
+
+
 .volume-slider::-moz-range-thumb:active,
 .volume-slider:hover::-moz-range-thumb{
     -webkit-appearance: none;
@@ -47,11 +56,6 @@
 
 .volume-slider:hover {
     opacity: 1;
-}
-
-.player-middle-side .controls .fa-circle-play:hover {
-    cursor: pointer;
-    scale: 1.5;
 }
 
 .main-container .item-playlist .img-container:hover:before,

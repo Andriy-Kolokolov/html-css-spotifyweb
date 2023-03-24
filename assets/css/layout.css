@@ -17,6 +17,9 @@ body {
     border-radius: 2rem;
 }
 
+/*****************************************
+    SIDE BAR
+*****************************************/
 .sidebar {
     width: var(--sidebar-container-width);
     height: calc(100vh - var(--player-panel-height));
@@ -116,6 +119,52 @@ body {
     display: inline-block;
 }
 
+/*****************************************
+    SIDE BAR MEDIA QUERY
+*****************************************/
+@media (max-width: 699px) {
+    body {
+        --sidebar-width: 5vh;
+    }
+
+    .main-container .section {
+        --cols: 2;
+
+        font-size: 75%;
+    }
+
+    .sidebar .links span,
+    .nav.playlists {
+        display: none;
+    }
+
+    .nav.main .links {
+        margin-top: .5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .nav.main .links li a {
+        justify-content: center;
+    }
+
+    .logo {
+        content: url("../img/logo-small.svg");
+        cursor: pointer;
+    }
+
+    .sidebar {
+        padding: 0 0 1rem 0;
+        align-items: center;
+        width: var(--sidebar-width);
+        overflow: hidden;
+    }
+}
+
+/*****************************************
+    MAIN CONTAINER
+*****************************************/
 .main-container {
     position: absolute;
     top: 0;
@@ -175,76 +224,9 @@ body {
     flex: 0 0 calc((100% - var(--cols) * var(--gap-playlists)) / var(--cols));
 }
 
-@media (max-width: 699px) {
-    body {
-        --sidebar-width: 5vh;
-    }
-
-    .main-container .section {
-        --cols: 2;
-
-        font-size: 75%;
-    }
-
-    .sidebar .links span,
-    .nav.playlists {
-        display: none;
-    }
-
-    .nav.main .links {
-        margin-top: .5rem;
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
-    }
-
-    .nav.main .links li a {
-        justify-content: center;
-    }
-
-    .logo {
-        content: url("../img/logo-small.svg");
-        cursor: pointer;
-    }
-
-    .sidebar {
-        padding: 0 0 1rem 0;
-        align-items: center;
-        width: var(--sidebar-width);
-        overflow: hidden;
-    }
-
-    .top-panel {
-        width: calc(100vw - var(--sidebar-width));
-        left: var(--sidebar-width);
-    }
-
-    .main-container {
-        width: calc(100vw - var(--sidebar-width));
-        left: var(--sidebar-width);
-    }
-}
-
-@media (min-width: 700px) {
-    .main-container .section {
-        --cols: 4;
-
-        font-size: 85%;
-        white-space: nowrap;
-    }
-}
-
-
-@media (min-width: 1100px) {
-    .main-container .section {
-        --cols: 6;
-    }
-}
-
 .main-container .item-playlist .img-container {
-    max-height: 250px;
-    aspect-ratio: 1 / 1;
     background-size: cover;
+    object-fit: cover;
 }
 
 .main-container .item-playlist .img-container:before {
@@ -262,7 +244,54 @@ body {
     border-radius: 50%;
 }
 
-/*  img RECENT SECTION  */
+/*****************************************
+    TOP PANEL, MAIN CONTAINER MEDIA QUERY
+*****************************************/
+@media (max-width: 699px) {
+    .top-panel {
+        width: calc(100vw - var(--sidebar-width));
+        left: var(--sidebar-width);
+    }
+
+    .main-container {
+        width: calc(100vw - var(--sidebar-width));
+        left: var(--sidebar-width);
+    }
+
+    .main-container .section {
+        --cols: 2;
+
+        white-space: nowrap;
+    }
+
+    .main-container .item-playlist {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 700px) {
+    .main-container .section {
+        --cols: 4;
+
+        white-space: nowrap;
+    }
+
+    .main-container .item-playlist {
+        padding: .5rem;
+    }
+
+}
+
+
+@media (min-width: 1100px) {
+    .main-container .section {
+        --cols: 6;
+    }
+}
+
+/*****************************************
+    IMG RECENT SECTION
+*****************************************/
 .main-container .recent .item-playlist:first-child .img-container {
     background-image: url("../img/metal_lifting.jpg");
 }
@@ -287,7 +316,9 @@ body {
     background-image: url("../img/sinister.jpeg");
 }
 
-/*  img CREATO PER TE SECTION  */
+/*****************************************
+    IMG CREATO PER TE SECTION
+*****************************************/
 .main-container .creato-per-te .item-playlist:first-child .img-container {
     background-image: url("../img/radar.jpeg");
 }
@@ -296,7 +327,9 @@ body {
     background-image: url("../img/mixdaily.jpeg");
 }
 
-/*  img POPULAR  */
+/*****************************************
+    IMG POPULAR SECTION
+*****************************************/
 .main-container .popular .item-playlist:first-child .img-container {
     background-image: url("../img/youg.jpeg");
 }
@@ -305,6 +338,9 @@ body {
     background-image: url("../img/einaudi.jpeg");
 }
 
+/*****************************************
+    AUDIO PANEL
+*****************************************/
 .audio-player-panel {
     padding-inline: var(--sidebar-padding);
     justify-content: space-between;
@@ -330,8 +366,10 @@ body {
     max-height: 50px;
 }
 
-.player-left-side .like-add-to-album > * {
-    padding: 5px;
+.player-left-side .like-add-to-album {
+    margin-left: 10px;
+    display: flex;
+    gap: 1rem;
 }
 
 .player-middle-side {
@@ -369,20 +407,8 @@ body {
     border-width: 0;
 }
 
-
 .song-time-control .song-time {
     width: 25px;
-}
-
-@media (max-width: 699px) {
-
-    .player-middle-side .controls {
-        gap: 1rem;
-    }
-
-    .song-time-control .slider {
-        width: 180px;
-    }
 }
 
 .player-right-side {
@@ -391,6 +417,16 @@ body {
     justify-content: end;
     gap: 1rem;
     flex-basis: 20%;
+}
+
+.player-right-side-controls {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.volume {
+    display: flex;
 }
 
 .volume-slider {
@@ -410,3 +446,45 @@ body {
     border-width: 0;
 }
 
+/*****************************************
+    AUDIO PANEL MEDIA QUERY
+*****************************************/
+@media (max-width: 750px) {
+    .audio-player-panel {
+        --column-gap: .7rem;
+    }
+
+    .player-left-side .song {
+        font-size: .7rem;
+    }
+
+    .player-left-side .like-add-to-album {
+        flex-direction: column;
+        gap: var(--column-gap);
+    }
+
+    .player-middle-side .controls {
+        gap: 1rem;
+    }
+
+    .song-time-control .slider {
+        width: 180px;
+    }
+
+    .player-right-side-controls {
+        flex-direction: column;
+        gap: var(--column-gap);
+    }
+
+    .player-right-side-controls i:first-child {
+        order: 3;
+    }
+
+    .player-right-side-controls i:nth-child(2) {
+        order: 1;
+    }
+
+    .player-right-side-controls i:last-child {
+        order: 2;
+    }
+}

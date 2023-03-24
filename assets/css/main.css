@@ -1,5 +1,5 @@
 :root {
-    --color-links: #ffffff;
+    --color-links: white;
     --color-title: white;
     --color-subtitle: #989898;
     --transition-links-time: .3s;
@@ -106,9 +106,12 @@ a {
     color: var(--color-subtitle);
 }
 
-.player-middle-side,
-.player-right-side {
+.player-left-side i,
+.player-middle-side i,
+.player-right-side i,
+.song-time-control {
     color: white;
+    opacity: .6;
 }
 
 .player-middle-side .controls {
