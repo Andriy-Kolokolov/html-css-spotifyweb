@@ -1,8 +1,8 @@
 :root {
-    --color-links: #a9a9a9;
+    --color-links: #ffffff;
     --color-title: white;
     --color-subtitle: #989898;
-    --transition-links-time: .4s;
+    --transition-links-time: .3s;
 }
 
 * {
@@ -13,7 +13,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 ul {
@@ -28,9 +28,10 @@ a {
     background-color: #000000;
 }
 
-.sidebar-navigation .links a,
-.sidebar-bot .download-app a {
+.sidebar .nav .links li a,
+.main-container .navigation .links li a {
     color: var(--color-links);
+    opacity: 0.6;
     transition: var(--transition-links-time);
 }
 
@@ -80,6 +81,11 @@ a {
 .main-container .navigation .links a {
     text-decoration: none;
     color: var(--color-links);
+    transition: var(--transition-links-time);
+}
+
+.main-container .item-playlist .img-container:before,
+.main-container .popular .item-playlist .img-container:before {
     transition: var(--transition-links-time);
 }
 

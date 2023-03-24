@@ -1,7 +1,6 @@
 .sidebar .nav .links li a:hover,
 .main-container .navigation .links li a:hover {
-    filter: brightness(300%);
-    color: white;
+    opacity: 1;
 }
 
 .top-panel .upgrade:hover {
@@ -11,6 +10,12 @@
 .audio-player-panel .fa-solid:hover,
 .audio-player-panel .fa-regular:hover {
     color: white;
+}
+
+.player-left-side .song_name:hover,
+.player-left-side .song_artist:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .player-middle-side .song-time-control .slider::-moz-range-thumb:active,
@@ -49,12 +54,7 @@
     scale: 1.5;
 }
 
-.main-container .item-playlist .img-container:hover:before {
-    transition: .4s;
-    opacity: 1;
-}
-
+.main-container .item-playlist .img-container:hover:before,
 .main-container .popular .item-playlist .img-container:hover:before {
-    transition: .4s;
     opacity: 1;
 }
